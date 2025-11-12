@@ -30,5 +30,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
+ENV AI_TIMEOUT=60
+ENV AI_PROBE_TIMEOUT=30
+
 # Start application
 ENTRYPOINT ["/app/entrypoint.sh"]
